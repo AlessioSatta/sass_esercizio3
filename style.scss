@@ -1,0 +1,29 @@
+.box {
+    display: flex;
+    height: 330px;
+    width: 100%;
+}
+
+.bounce {
+    align-self: flex-end;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    background-color: red;
+    height: 200px;
+    margin: 0 auto 0 auto;
+    transform-origin: bottom;
+    width: 200px;
+    animation-name: bounce;
+    animation-timing-function: linear;
+}
+
+@mixin trasla($property) {
+    transform: translateY($property);
+  }  
+
+@keyframes bounce {
+    0% {@include trasla(0);}
+    40% {@include trasla(-130px);}
+    60% {@include trasla(calc(-130px / 2));}
+    100% {@include trasla(0)}
+}
